@@ -8,9 +8,9 @@ summary: |-
 upstream:
   url: https://www.webgrabplus.com
   version:
-    type: command
-    run: |-
-      curl -fsL 'https://webgrabplus.com/download/sw' | grep -m1 '/download/sw/v' | sed -r 's|.*/download/sw/v(.*).>V.*|\1|'
+    type: regex
+    url: https://webgrabplus.com/download/sw
+    pattern: /download/sw/v([^"]+)">V
 
 release:
   branch: master
