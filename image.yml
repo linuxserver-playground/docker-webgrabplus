@@ -11,6 +11,8 @@ upstream:
     type: regex
     url: https://webgrabplus.com/download/sw
     pattern: /download/sw/v([^"]+)">V
+    require_assets:
+      - 'https://webgrabplus.com/download/sw/v${VERSION}'
 
 release:
   branch: master
